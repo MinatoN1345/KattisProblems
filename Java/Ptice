@@ -1,0 +1,71 @@
+import java.util.*;
+public class Ptice
+{
+
+    public Ptice()
+    {
+        Scanner scanner = new Scanner(System.in);
+        String adrian = "";
+        String bruno = "";
+        String goran = "";
+        int numberOfQuestions = scanner.nextInt();
+        String input = scanner.next();
+        int adrianCount = 0;
+        int brunoCount = 0;
+        int goranCount = 0;
+        List<Integer> counts = new ArrayList<Integer>();
+        for(int j = 0; j < 33; j++)
+        {
+          adrian = adrian + "ABC";
+        }
+        adrian = adrian + "A";
+        for(int j = 0; j < 25; j++)
+        {
+          bruno =  bruno  + "BABC";
+        }
+        
+        for(int j = 0; j < 16; j++)
+        {
+          goran =  goran  + "CCAABB";
+        }
+        goran =  goran  + "CCAA";
+        for(int i = 0; i < input.length(); i++)
+        {
+            if(input.charAt(i) == adrian.charAt(i))
+            {
+                adrianCount++;
+            }
+            if(input.charAt(i) == bruno.charAt(i))
+            {
+                brunoCount++;
+            }
+            if(input.charAt(i) == goran.charAt(i))
+            {
+                goranCount++;
+            }
+        }
+        counts.add(adrianCount);
+        counts.add(brunoCount);
+        counts.add(goranCount);
+        int max = Collections.max(counts);
+        System.out.println(max);
+        if(adrianCount == max)
+        {
+            System.out.println("Adrian");
+        }
+        if(brunoCount == max)
+        {
+            System.out.println("Bruno");
+        }
+        if(goranCount == max)
+        {
+            System.out.println("Goran");
+        }
+    }
+
+    public static void main(String[] args)
+    {
+        new Ptice();
+    }
+}
+
